@@ -16,6 +16,7 @@ type track = {
   track_number: string;
   duration_ms: string;
   preview_url: string;
+  artist: string;
 }
 
 @Component({
