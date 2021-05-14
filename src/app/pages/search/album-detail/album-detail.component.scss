@@ -1,0 +1,83 @@
+.container {
+  width: 100%;
+  flex-direction: column;
+}
+
+.album-detail-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  .album-cover {
+    margin-right: 36px;
+  }
+  .tracks {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin-bottom: 24px;
+  }
+}
+
+.back{
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  &:hover{
+    font-size: 18px;
+  }
+}
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  padding: 16px;
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  text-align: right;
+  img {
+    margin: 16px 16px;
+  }
+
+  .play {
+    background-color: var(--secondary);
+    border-radius: 1rem;
+    width: 24px;
+    height: 24px;
+  }
+
+  .pause {
+    width: 24px;
+    height: 24px;
+  }
+  span {
+    position: relative;
+    bottom: 24px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}

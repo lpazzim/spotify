@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="search-container">
+    <sinput [type]="'text'" [placeHolder]="'Comece a escrever...'" [label]="'Busque por artistas, álbuns ou músicas'"
+      (handleChange)="searchAlbuns($event)">
+    </sinput>
+  </div>
+
+  <div *ngIf="listAlbums.length > 0" class="search-presentation-title">
+    <span>{{presentationText}}</span>
+  </div>
+
+
+  <div class="search-presentation">
+    <div *ngFor="let album of listAlbums">
+      <app-card-album [artist]="album.artist" [albumName]="album.name" [imageUrl]="album.image" [id]="album.id"
+        (handleClick)="openAlbum($event)">
+      </app-card-album>
+    </div>
+  </div>
+</div>
