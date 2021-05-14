@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./variables";
+
+html{
+  height: 100%;
+}
+
+body {
+  background-color: var(--background); 
+  margin: 24px 18px;
+  .container {
+    width: 100%;
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+body,
+input,
+textarea,
+button,
+label {
+  font-family: Roboto, sans-serif;
+  color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {  
+  font-family: Roboto, sans-serif;  
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--background);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 20px;
+  border: 3px solid var(--background);
+}
