@@ -37,6 +37,7 @@ export class SpotifyService {
   }
 
   handleApiResponse(status, response) {
+    console.log(status, response);
     if (status == 200) {
       console.log(response);
     }

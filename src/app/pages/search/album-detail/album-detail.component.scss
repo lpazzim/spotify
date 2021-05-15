@@ -10,6 +10,10 @@
   .album-cover {
     margin-right: 36px;
   }
+
+  .album-tracks {
+    margin-bottom: 100px;
+  }
   .tracks {
     cursor: pointer;
     display: flex;
@@ -37,12 +41,26 @@
   left: 0;
   width: 100%;
   height: 90px;
-  padding: 16px;
   background-color: #181818;
   border-top: 1px solid #282828;
   text-align: right;
-  img {
-    margin: 16px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .mini-cover {
+    width: 90px;
+    height: auto;
+    position: relative;
+  }
+
+  .player-info {
+    width: 100%;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .player-button {
+    margin: 0 24px;
   }
 
   .play {
@@ -50,26 +68,16 @@
     border-radius: 1rem;
     width: 24px;
     height: 24px;
+    cursor: pointer;
   }
 
   .pause {
     width: 24px;
     height: 24px;
+    cursor: pointer;
   }
-  span {
-    position: relative;
-    bottom: 24px;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    font-size: 16px;
-    letter-spacing: 4px;
-    overflow: hidden;
-    background: linear-gradient(90deg, #000, #fff, #000);
-    background-repeat: no-repeat;
-    background-size: 80%;
-    animation: animate 3s linear infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  p {
+    margin: 8px 0;
   }
 }
 
@@ -81,7 +89,6 @@
     background-position: 500%;
   }
 }
-
 
 @media only screen and (max-width: 600px) {
   div.album-detail-container {
@@ -95,23 +102,64 @@
       display: flex;
       margin: 0;
       justify-content: center;
-      img{
+      img {
         height: 152px;
         width: 152px;
       }
     }
   }
 
-  .album-tracks{
-    overflow: scroll;    
-    height: 445px;
+  .album-tracks {
+    overflow: scroll;
+    height: 100%;
     padding: 0 8px;
+    margin-bottom: 100px;
   }
-  
+
+  .player {
+    .mini-cover {
+      z-index: 3;
+    }
+    .player-info {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      text-align: left;
+      padding: 0 8px;
+      position: relative;
+    }
+    span,
+    p {
+      font-size: 12px;
+    }
+
+    span {
+      animation: 13.2333s linear 0s infinite normal none running moving;
+      position: absolute;
+      width: 417px;
+      height: 100%;
+      left: 10px;
+      top: 24px;
+      padding-right: 20px;
+    }
+  }
+
   .back {
     left: 24px;
     &:hover {
       font-size: 18px;
     }
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

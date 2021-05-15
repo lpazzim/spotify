@@ -41,6 +41,10 @@ export class SearchListComponent implements OnInit {
 
     if (id) {
       this.searchAlbuns(id);
+    } else {
+      if(localStorage.getItem('lastSearch')){
+        this.listAlbums = JSON.parse(localStorage.getItem('lastSearch'));
+      }
     }
   }
 
@@ -63,6 +67,7 @@ export class SearchListComponent implements OnInit {
       });
 
       this.listAlbums = albums;
+      localStorage.setItem('lastSearch', JSON.stringify(albums));
     }, err => {
       this.spotifyService.handleApiResponse(err.status, err.message);
     });

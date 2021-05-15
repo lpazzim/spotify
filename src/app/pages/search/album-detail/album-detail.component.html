@@ -1,29 +1,37 @@
 <div class="container">
-  <span class="back" (click)="back()">< Voltar</span>
-  <div class="album-detail-container">
-    <div class="album-cover">
-      <img src={{selectedAlbum?.image}} alt="Album" />
-    </div>
-    <div class="album-tracks">
-      <div *ngFor="let track of selectedTracks" class="tracks" (click)="playTrack(track)">
-        <span>{{track.track_number}}. {{track.name}}</span>
-        <div>
-          <span> {{track.duration_ms}}</span>
+  <span class="back" (click)="back()">
+    < Voltar</span>
+      <div class="album-detail-container">
+        <div class="album-cover">
+          <img src={{selectedAlbum?.image}} alt="Album" />
         </div>
+        <div class="album-tracks">
+          <div *ngFor="let track of selectedTracks" class="tracks" (click)="playTrack(track)">
+            <span>{{track.track_number}}. {{track.name}}</span>
+            <div>
+              <span> {{track.duration_ms}}</span>
+            </div>
 
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <audio #player src={{playing?.preview_url}} autoPlay id="player"></audio>
-  <div class="player">
-    <p>Tocando agora</p>
-
-    <div>
-      <span>
-        {{playing?.artist}} - {{playing?.name}}
-      </span>
-        <img class="pause" *ngIf="isPlaying" src="./../../../../assets/images/pause.svg" alt="Pausar" (click)="pause()" />
-        <img class="play" *ngIf="isPaused" src="./../../../../assets/images/play.svg" alt="Tocar" (click)="play()" />      
-    </div>
-  </div>
+      <audio #player src={{playing?.preview_url}} autoPlay id="player"></audio>
+      <div class="player">
+        <div>
+          <img class="mini-cover" src={{selectedAlbum?.image}} alt="Album" />
+        </div>
+        <div class="player-info">
+          <p>
+            {{playing?.artist}}
+          </p>
+          <span key="playing">
+            {{playing?.name}}
+          </span>
+        </div>
+        <div class="player-button">
+          <img class="pause" *ngIf="isPlaying" src="./../../../../assets/images/pause.svg" alt="Pausar"
+            (click)="pause()" />
+          <img class="play" *ngIf="isPaused" src="./../../../../assets/images/play.svg" alt="Tocar" (click)="play()" />
+        </div>
+      </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,9 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.router.navigate(['/login']);
+    localStorage.setItem('environment', environment.environmentDescription);
+    if(window.location.pathname === '/'){
+      this.router.navigate(['/login']);
+    }
   }
 }
