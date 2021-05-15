@@ -1,15 +1,15 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { SpotifyService } from '../../core/services/spotify.service';
 
 
 @Component({
-  selector: 'authenticationForm',
+  selector: 'app-authentication-form',
   templateUrl: './authentication.component.html',
   styleUrls: ['./authentication.component.scss']
 })
 
-export class AuthenticationComponent implements OnInit {
+export class AuthenticationComponent {
   protected router: Router;
   constructor(
     protected injector: Injector,
@@ -18,8 +18,7 @@ export class AuthenticationComponent implements OnInit {
     this.router = this.injector.get(Router);
   }
 
-  ngOnInit() {
-  }
+
 
   setToken(value) {
     if (value.length > 30) {
@@ -27,8 +26,8 @@ export class AuthenticationComponent implements OnInit {
     }
   }
 
-  activeToken() { 
-    if(localStorage.getItem('access_token')){
+  activeToken() {
+    if (localStorage.getItem('access_token')) {
       this.router.navigate(['/album']);
     }
   }

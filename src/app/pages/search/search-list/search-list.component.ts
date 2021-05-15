@@ -2,7 +2,7 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SpotifyService } from '../../../core/services/spotify.service';
 
-type Album = {
+interface Album {
   id: string;
   name: string;
   artist: string;
@@ -14,8 +14,6 @@ type Album = {
   templateUrl: './search-list.component.html',
   styleUrls: ['./search-list.component.scss']
 })
-
-
 
 export class SearchListComponent implements OnInit {
   protected router: Router;
@@ -37,12 +35,12 @@ export class SearchListComponent implements OnInit {
 
 
   initLoad() {
-    const id = this.route.snapshot.paramMap.get("id");
+    const id = this.route.snapshot.paramMap.get('id');
 
     if (id) {
       this.searchAlbuns(id);
     } else {
-      if(localStorage.getItem('lastSearch')){
+      if (localStorage.getItem('lastSearch')) {
         this.listAlbums = JSON.parse(localStorage.getItem('lastSearch'));
       }
     }
@@ -51,9 +49,9 @@ export class SearchListComponent implements OnInit {
 
   async searchAlbuns(data) {
     if (data.length > 0) {
-      this.presentationText = `Apresentando resultados para '${data}'`
+      this.presentationText = `Apresentando resultados para '${data}'`;
     } else {
-      this.presentationText = 'Álbuns buscados recentemente'
+      this.presentationText = 'Álbuns buscados recentemente';
     }
 
     await this.spotifyService.getRandomSearch(data).subscribe(res => {
@@ -63,7 +61,7 @@ export class SearchListComponent implements OnInit {
           name: album.name,
           artist: album.artists.shift().name,
           image: album.images.find(e => e.height === 300).url
-        }
+        };
       });
 
       this.listAlbums = albums;

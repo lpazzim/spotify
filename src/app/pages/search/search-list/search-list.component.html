@@ -1,8 +1,8 @@
 <div class="container">
   <div class="search-container">
-    <sinput [type]="'text'" [placeHolder]="'Comece a escrever...'" [label]="'Busque por artistas, álbuns ou músicas'"
+    <app-sinput [type]="'text'" [placeHolder]="'Comece a escrever...'" [label]="'Busque por artistas, álbuns ou músicas'"
       (handleChange)="searchAlbuns($event)">
-    </sinput>
+    </app-sinput>
   </div>
 
   <div *ngIf="listAlbums.length > 0" class="search-presentation-title">

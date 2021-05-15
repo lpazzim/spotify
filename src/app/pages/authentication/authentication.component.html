@@ -1,6 +1,6 @@
 <div class="container">
-  <sinput [type]="'text'" [placeHolder]="'Token'" [label]="'Insira um token válido'" (handleChange)="setToken($event)">
-  </sinput>
+  <app-sinput [type]="'text'" [placeHolder]="'Token'" [label]="'Insira um token válido'" (handleChange)="setToken($event)">
+  </app-sinput>
   <div class="button-container">
     <button (click)="activeToken()"> Ativar </button>
   </div>

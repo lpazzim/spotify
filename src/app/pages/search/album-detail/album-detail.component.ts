@@ -1,9 +1,9 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SpotifyService } from '../../../core/services/spotify.service';
-import { convertDurationToTimeString } from './../../../core/utils/utils'
+import { convertDurationToTimeString } from './../../../core/utils/utils';
 
-type Album = {
+interface Album {
   id: string;
   name: string;
   artist: string;
@@ -11,7 +11,7 @@ type Album = {
 }
 
 
-type track = {
+interface Track {
   name: string;
   track_number: string;
   duration_ms: string;
@@ -32,10 +32,10 @@ export class AlbumDetailComponent implements OnInit {
   protected route: ActivatedRoute;
   selectedAlbum;
   selectedTracks;
-  playing: track;
+  playing: Track;
   isPlaying = false;
   isPaused = false;
-  
+
   constructor(
     protected injector: Injector,
     private spotifyService: SpotifyService
@@ -45,7 +45,7 @@ export class AlbumDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get("id");
+    const id = this.route.snapshot.paramMap.get('id');
     this.getAlbum(id);
   }
 
@@ -57,7 +57,7 @@ export class AlbumDetailComponent implements OnInit {
         artist: res.artists.shift().name,
         image: res.images.find(e => e.height === 300).url,
         tracks: res.tracks.items
-      }
+      };
       this.selectedAlbum = album;
 
       const tracks = album.tracks.map(track => {
@@ -67,36 +67,36 @@ export class AlbumDetailComponent implements OnInit {
           duration_ms: convertDurationToTimeString(Number(track.duration_ms)),
           preview_url: track.preview_url,
           artist: track.artists.shift().name,
-        }
-      })
+        };
+      });
       this.selectedTracks = tracks;
     }, err => {
       this.spotifyService.handleApiResponse(err.status, err.message);
     });
   }
 
-  playTrack(track) {    
+  playTrack(track) {
     this.playing = track;
     this.isPlaying = true;
     this.isPaused = false;
   }
 
-  pause(){
-    var elemento = <HTMLAudioElement>document.getElementById("player");
+  pause() {
+    const elemento = document.getElementById('player') as HTMLAudioElement;
     this.isPaused = true;
     this.isPlaying = false;
     elemento.pause();
   }
 
-  play(){
-    var elemento = <HTMLAudioElement>document.getElementById("player");
+  play() {
+    const elemento = document.getElementById('player') as HTMLAudioElement;
     this.isPlaying = true;
     this.isPaused = false;
     elemento.play();
   }
 
 
-  back(){
+  back() {
     this.router.navigate(['/album']);
   }
 }

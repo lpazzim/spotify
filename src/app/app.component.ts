@@ -13,14 +13,14 @@ export class AppComponent implements OnInit {
 
   constructor(
     protected injector: Injector,
-  ){
+  ) {
     this.router = this.injector.get(Router);
   }
 
 
   ngOnInit() {
     localStorage.setItem('environment', environment.environmentDescription);
-    if(window.location.pathname === '/'){
+    if (window.location.pathname === '/') {
       this.router.navigate(['/login']);
     }
   }

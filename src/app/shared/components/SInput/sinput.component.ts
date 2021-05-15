@@ -1,22 +1,18 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'sinput',
+  selector: 'app-sinput',
   templateUrl: './sinput.component.html',
   styleUrls: ['./sinput.component.scss']
 })
-export class SInputComponent implements OnInit {
-  @Input('type') type:string;
-  @Input('placeHolder') placeHolder: string;
-  @Input('label') label: string;
-  @Output() handleChange: EventEmitter<any>= new EventEmitter<any>();  
-  constructor() { }
+export class SInputComponent {
+  @Input() type: string;
+  @Input() placeHolder: string;
+  @Input() label: string;
+  @Output() handleChange: EventEmitter<any> = new EventEmitter<any>();
 
-  ngOnInit() {
-  }
-
-  onChange(value){
+  onChange(value) {
     this.handleChange.emit(value);
   }
-
 }
+
