@@ -4,14 +4,16 @@
       <div class="album-detail-container">
         <div class="album-cover">
           <img src={{selectedAlbum?.image}} alt="Album" />
+          <p class="album-name">{{selectedAlbum?.name}}</p>
+          <p class="album-artist">{{selectedAlbum?.artist}}</p>
         </div>
         <div class="album-tracks">
           <div *ngFor="let track of selectedTracks" class="tracks" (click)="playTrack(track)">
-            <span>{{track.track_number}}. {{track.name}}</span>
-            <div>
+            <span class="track-number">{{track.track_number}}. </span>
+            <span class="track-name">{{track.name}}</span>
+            <div class="track-duration">
               <span> {{track.duration_ms}}</span>
             </div>
-
           </div>
         </div>
       </div>

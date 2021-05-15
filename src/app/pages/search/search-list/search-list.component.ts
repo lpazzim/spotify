@@ -50,25 +50,24 @@ export class SearchListComponent implements OnInit {
   async searchAlbuns(data) {
     if (data.length > 0) {
       this.presentationText = `Apresentando resultados para '${data}'`;
+
+      await this.spotifyService.getRandomSearch(data).subscribe(res => {
+        const albums = res.albums.items.map(album => {
+          return {
+            id: album.id,
+            name: album.name,
+            artist: album.artists.shift().name,
+            image: album.images.find(e => e.height === 300).url
+          };
+        });
+        this.listAlbums = albums;
+        localStorage.setItem('lastSearch', JSON.stringify(albums));
+      }, err => {
+        this.spotifyService.handleApiResponse(err.status, err.message);
+      });
     } else {
       this.presentationText = 'Álbuns buscados recentemente';
     }
-
-    await this.spotifyService.getRandomSearch(data).subscribe(res => {
-      const albums = res.albums.items.map(album => {
-        return {
-          id: album.id,
-          name: album.name,
-          artist: album.artists.shift().name,
-          image: album.images.find(e => e.height === 300).url
-        };
-      });
-
-      this.listAlbums = albums;
-      localStorage.setItem('lastSearch', JSON.stringify(albums));
-    }, err => {
-      this.spotifyService.handleApiResponse(err.status, err.message);
-    });
   }
 
   openAlbum(id) {

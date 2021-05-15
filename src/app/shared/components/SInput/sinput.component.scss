@@ -1,17 +1,22 @@
 .input-container {
   width: 100%;
   label {
-    color: #9b9b9b;
+    color: var(--font-color-dark);
     font-size: 16px;
   }
   input {
     width: 100%;
+    font-weight: 700;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid var(--primary);
     font-size: var(--font-size-48);
     margin: 8px 0;
     padding: 5px 0;
+    color: var(--font-color-light);
+    ::placeholder { 
+      color: var(--font-color-dark);
+    }
     &:focus-visible {
       outline: none;
     }

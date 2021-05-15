@@ -1,44 +1,63 @@
-.card-container{
+.card-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 24px 12px;
   cursor: pointer;
-  .description-container{
+  .description-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    span{
-      max-width: 100px;
+    .album-name {
+      display: block;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
       overflow: hidden;
       text-overflow: ellipsis;
-      line-height: 24px;
-      white-space: nowrap;
+      max-width: 100px;
+      max-height: 2.6em;
+      line-height: 1.1em;
+      font-size: 14px;
+      color: var(--font-color-light);
+      text-align: center;
+      padding-top: 8px;
+    }
+    .album-artist {
+      display: block;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 130px;
+      max-height: 2.2em;
+      line-height: 1.1em;
+      font-size: 12px;
+      color: var(--font-color-dark);
+      text-align: center;
+      padding-top: 8px;
     }
   }
 
-  img{
+  img {
     margin: 5px 0;
     max-width: 148px;
     max-height: 148px;
   }
 }
 
-
 @media only screen and (max-width: 600px) {
-  .card-container{
+  .card-container {
     margin: 24px 8px;
-    img{
+    img {
       max-width: 112px;
       max-height: 112px;
     }
   }
 }
 
-
 @media only screen and (max-width: 600px) {
-  .card-container{
+  .card-container {
     margin: 24px 6px;
   }
 }
