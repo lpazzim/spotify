@@ -24,3 +24,21 @@
     max-height: 148px;
   }
 }
+
+
+@media only screen and (max-width: 600px) {
+  .card-container{
+    margin: 24px 8px;
+    img{
+      max-width: 112px;
+      max-height: 112px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .card-container{
+    margin: 24px 6px;
+  }
+}
