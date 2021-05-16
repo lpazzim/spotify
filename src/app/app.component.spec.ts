@@ -25,10 +25,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('spotify');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render logo in a img tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to spotify!');
+    expect(compiled.querySelector('img').id).toContain('logo');
   });
 });
