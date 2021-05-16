@@ -50,7 +50,7 @@
 ### How to use
 - git clone https://github.com/lpazzim/spotify.git
 - cd spotify
-- npm install
+- yarn/npm install
 - yarn/npm start
 
 
