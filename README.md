@@ -4,7 +4,7 @@
     target="_blank"
   >
     <img
-      src="src/assets/images/white-logo.png"
+      src="src/assets/images/spotify-logo-green.png"
       alt="javascript"
     />
   </a>
