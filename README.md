@@ -13,21 +13,18 @@
 
 ### Languages
 <p align="left">
-  <a
-    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-    target="_blank"
-  >
+<a href="https://www.typescriptlang.org" target="_blank">
     <img
-      src="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg"
-      alt="javascript"
+      src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg"
+      alt="typescript"
       width="40"
       height="40"
     />
   </a>
-  <a href="https://reactjs.org/" target="_blank">
+   <a href="https://angular.io/" target="_blank">
     <img
-      src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg"
-      alt="react"
+      src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg"
+      alt="angular"
       width="40"
       height="40"
     />
