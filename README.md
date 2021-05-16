@@ -1,27 +1,61 @@
-# Spotify
+# mercado-livre-app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.10.
+<div  align="left">
+<p align="left">
+  <a
+    target="_blank"
+  >
+    <img
+      src=""
+      alt="javascript"
+    />
+  </a>
+</p>
+</div>
 
-## Development server
+### Languages
+<p align="left">
+  <a
+    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    target="_blank"
+  >
+    <img
+      src="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg"
+      alt="javascript"
+      width="40"
+      height="40"
+    />
+  </a>
+  <a href="https://reactjs.org/" target="_blank">
+    <img
+      src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg"
+      alt="react"
+      width="40"
+      height="40"
+    />
+  </a>
+  <a href="https://sass-lang.com/documentation/syntax" target="_blank">
+    <img
+      src="https://www.vectorlogo.zone/logos/sass-lang/sass-lang-icon.svg"
+      alt="scss"
+      width="40"
+      height="40"
+    />
+  </a>
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5" target="_blank">
+    <img
+      src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg"
+      alt="html5"
+      width="40"
+      height="40"
+    />
+  </a>
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### How to use
+- git clone 
+- cd spotify
+- npm install
+- yarn/npm start
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The application will be running on: http://localhost:4200/;
