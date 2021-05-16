@@ -15,11 +15,10 @@ describe('SInputComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SInputComponent);
-    component = fixture.componentInstance;  
+    component = fixture.componentInstance;
     component.label = 'Renderização de teste';
     component.type = 'text';
-    component.placeHolder = 'Digite aqui...';    
-
+    component.placeHolder = 'Digite aqui...';
     fixture.detectChanges();
   });
 
