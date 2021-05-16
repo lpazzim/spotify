@@ -6,7 +6,7 @@
     target="_blank"
   >
     <img
-      src=""
+      src="src/assets/images/white-logo.png"
       alt="javascript"
     />
   </a>
