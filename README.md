@@ -48,9 +48,14 @@
 </p>
 
 ### How to use
-- git clone 
+- git clone https://github.com/lpazzim/spotify.git
 - cd spotify
 - npm install
 - yarn/npm start
+
+
+### 
+- To start to use this aplication you need to generate a token in this ulr (https://developer.spotify.com/console/get-search-item/?q=&type=&market=&limit=&offset=&include_external=) after this choose "user-read-email" and click in "REQUEST TOKEN". Copy the "OAuth Token" an put in the first page of this application "/login".
+
 
 The application will be running on: http://localhost:4200/;
