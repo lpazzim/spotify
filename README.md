@@ -55,7 +55,7 @@
 
 
 ### Authentication (TOKEN)
-- To start to use this aplication you need to generate a token in this ulr (https://developer.spotify.com/console/get-search-item/?q=&type=&market=&limit=&offset=&include_external=) after this choose "user-read-email" and click in "REQUEST TOKEN". Copy the "OAuth Token" an put in the first page of this application "/login".
+- To start to use this application you need to generate a token in this ulr (https://developer.spotify.com/console/get-search-item/?q=&type=&market=&limit=&offset=&include_external=) after this choose "user-read-email" and click in "REQUEST TOKEN". Copy the "OAuth Token" an put in the first page of this application "/login".
 
 
 The application will be running on: http://localhost:4200/;
