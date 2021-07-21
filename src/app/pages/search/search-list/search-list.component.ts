@@ -1,5 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 import { SpotifyService } from '../../../core/services/spotify.service';
 
 interface Album {
@@ -18,6 +20,8 @@ interface Album {
 export class SearchListComponent implements OnInit {
   protected router: Router;
   protected route: ActivatedRoute;
+  private subjectKeyUp = new Subject<any>();
+
   listAlbums: Album[] = [];
   presentationText = 'Álbuns buscados recentemente';
 
@@ -31,6 +35,9 @@ export class SearchListComponent implements OnInit {
 
   ngOnInit() {
     this.initLoad();
+    this.subjectKeyUp.pipe(debounceTime(800)).subscribe((value) => {
+      this.searchAlbuns(value);
+    });
   }
 
 
@@ -44,6 +51,10 @@ export class SearchListComponent implements OnInit {
         this.listAlbums = JSON.parse(localStorage.getItem('lastSearch'));
       }
     }
+  }
+
+  processSearch(value) {
+    this.subjectKeyUp.next(value);
   }
 
 
